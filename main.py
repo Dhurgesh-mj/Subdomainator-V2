@@ -32,7 +32,7 @@ def parse_args():
 
 async def handle_domain(domain, args):
     results = await subdomain_running(domain, threads=args.threads, timeout=args.timeout, silent=args.silent)
-
+    results = list(set(results))
     if args.output:
         with open(args.output, 'a') as f:
             f.write("\n".join(results) + "\n")
