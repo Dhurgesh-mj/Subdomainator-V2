@@ -14,8 +14,8 @@ License: MIT
 To install SUBDOMINATOR, clone the repository and install dependencies:
 
 ```bash
-git clone https://github.com/yourusername/SUBDOMINATOR.git
-cd SUBDOMINATOR/
+https://github.com/Dhurgesh-mj/Subdomainator-V2
+cd Subdomainator-V2/
 pip install -r requirements.txt
 ```
 
