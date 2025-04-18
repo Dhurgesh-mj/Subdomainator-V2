@@ -36,7 +36,6 @@ usage: main.py [-h] [-d DOMAIN] [-ld LIST] [-o OUTPUT] [-oJ JSON] [-oD OUTPUT_DI
                [-t THREADS] [--silent] [--timeout TIMEOUT]
                [--bruteforce] [--wordlist WORDLIST]
 
-Subfinder-like async subdomain finder
 ```
 
 ### 🔹 Examples
