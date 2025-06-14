@@ -6,7 +6,7 @@ import json
 with open("config.json") as f:
     CONFIG = json.load(f)
 
-async def run_plugins(plugin, domain, semaphore, timeout, silent):
+async def run_plugins(plugin, domain, semaphore, timeout):
     async with semaphore:
         try:
             if hasattr(plugin, "run"):
@@ -20,7 +20,7 @@ async def run_plugins(plugin, domain, semaphore, timeout, silent):
 async def subdomain_running(domain, threads=10, timeout=10, silent=False):
     plugins = load_plugins()
     semaphore = asyncio.Semaphore(threads)
-    tasks = [run_plugins(plugin, domain, semaphore, timeout, silent) for plugin in plugins]
+    tasks = [run_plugins(plugin, domain, semaphore, timeout) for plugin in plugins]
     results = await asyncio.gather(*tasks)
     all_subs = set(sub for res in results for sub in res)
     if not silent:
